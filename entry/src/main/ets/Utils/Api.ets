@@ -20,3 +20,13 @@ export function createPost(post:{
 //   // 获取所有热门景区
 //   return httpObj.get('/article/all', { params: {} })
 // }
+
+export function get_resort(){
+  // 获取所有市区 -- 原方法名:getAll_resort
+  return httpObj.get('/article/all', { params:{} })
+}
+
+export function get_resorts(){
+  // 获取所有景区 -- 原方法名:getAll_resorts
+  return httpObj.get('/article', { params:{type:7} })
+}

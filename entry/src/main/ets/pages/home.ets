@@ -3,7 +3,7 @@ import ItemData from '../model/ItemData_homepage'
 
 @Entry
 @Component
-struct HomePage {
+export struct HomePage {
   @State colorIndex: number = 0
   private swiperController: SwiperController = new SwiperController()
   scroller1: Scroller = new Scroller()

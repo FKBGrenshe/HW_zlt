@@ -1,17 +1,67 @@
+//index 程序的主入口
+
+import { HomePage } from '../pages/home'
+import { ResortPage } from '../pages/Resort_Page'
+
 @Entry
 @Component
 struct Index {
-  @State message: string = 'Hello Group4'
+
+  //滚动
+  scroller: Scroller = new Scroller()
+
+  @State message: string = 'Hello World'
+  @StorageProp("token")
+  token:string = ""
+
+  @State currentTabIndex:number=0; //记录当前选项卡的index
+  // 点击tab切换的时候，index改变，
+  //父组件同步到circle中
 
   build() {
-    Row() {
-      Column() {
-        Text(this.message)
-          .fontSize(50)
-          .fontWeight(FontWeight.Bold)
+
+    Tabs() {
+      TabContent() {
+        // Text('打卡')
+        HomePage()
       }
-      .width('100%')
+      // .tabBar('打卡')
+      .tabBar(this.barBuilder(0,'HomePage'))
+
+      TabContent() {
+        // Text('朋友圈')
+        // CirclePage()
+        ResortPage({currentTabIndex:this.currentTabIndex})
+      }
+      // .tabBar('朋友圈')
+      .tabBar(this.barBuilder(1,'ResortPage'))
+
+      // TabContent() {
+      //   MinePage({currentTabIndex:this.currentTabIndex})
+      // }
+      // .tabBar(this.barBuilder(2,'我的'))
+
     }
-    .height('100%')
+    .barPosition(BarPosition.End)
+    .onChange(index=>{
+      this.currentTabIndex=index;
+    })
   }
+
+
+  // 自定义tabbar
+  @Builder barBuilder(index: number, title: string) {
+    Column() {
+      Text(title)
+        .tabTitleStyle(this.currentTabIndex===index?Color.Black:"#9595")
+    }
+  }
+
+}
+
+@Extend(Text) function tabTitleStyle(color: ResourceColor) {
+  .fontSize(10)
+  .fontWeight(FontWeight.Medium)
+  .fontColor(color) //Color.Black
+  .margin({ bottom: 2 })
 }
