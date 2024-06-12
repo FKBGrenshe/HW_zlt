@@ -30,3 +30,8 @@ export function get_resorts(){
   // 获取所有景区 -- 原方法名:getAll_resorts
   return httpObj.get('/article', { params:{type:7} })
 }
+
+export function getAllFood(){
+  // 获取所有美食
+  return httpObj.get('/foodType')
+}

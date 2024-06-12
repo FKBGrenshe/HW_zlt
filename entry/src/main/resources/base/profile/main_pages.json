@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/Index",
-    "pages/Search_resort_Page"
+    "pages/Search_resort_Page",
+    "pages/Food_Page"
   ]
 }
