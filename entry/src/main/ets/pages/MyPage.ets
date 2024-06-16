@@ -1,4 +1,4 @@
-//@Entry
+@Entry
 @Component
 export struct MyPage {
 
