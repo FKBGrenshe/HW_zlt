@@ -35,3 +35,8 @@ export function getAllFood(){
   // 获取所有美食
   return httpObj.get('/foodType')
 }
+
+export function get_selectOneMall(id:string){
+  return httpObj.get('/foodType/'+id, { params: { id: id } })
+}
+
