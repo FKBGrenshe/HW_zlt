@@ -2,8 +2,7 @@
 import MallHome from '../view/MallHome'
 import Shopping from "../view/Shopping"
 
-
-//@Entry
+@Entry
 @Component
 export struct MainPage {
   @State currentIndex: number = 0;
