@@ -8,7 +8,6 @@ import ItemData from '../model/ItemData_mallpage';
 
 @CustomDialog
 struct CustomDialogExample {
-  // options:CustomDialogControllerOptions =
   controller: CustomDialogController
   cancel: () => void
   confirm: () => void
@@ -27,6 +26,10 @@ struct CustomDialogExample {
     } else {
       console.log('Item not found');
     }
+  }
+  // 添加到购物车功能
+  private addToCart(itemTitle: string) {
+    router.pushUrl({ url: 'view/Shopping',params: {itemTitle:itemTitle} })
   }
 
   build() {
@@ -53,8 +56,15 @@ struct CustomDialogExample {
             .fontColor(Color.Gray)
             .margin({ left: '8vp' });
 
+          Image($r('app.media.cart'))
+            .width('24vp')
+            .height('24vp')
+            .onClick(() => this.addToCart(this.item.title))
+            .margin({ right: '8vp' })
+
         }
         .margin({ top: '8vp' });
+
       } else {
         Text('Loading...')
           .fontSize('16fp')
