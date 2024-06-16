@@ -1,6 +1,6 @@
-@Entry
+//@Entry
 @Component
-struct MyPage {
+export struct MyPage {
 
   build() {
     Column() {
