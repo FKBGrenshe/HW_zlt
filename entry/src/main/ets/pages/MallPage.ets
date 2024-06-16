@@ -3,9 +3,9 @@ import MallHome from '../view/MallHome'
 import Shopping from "../view/Shopping"
 
 
-@Entry
+//@Entry
 @Component
-struct MainPage {
+export struct MainPage {
   @State currentIndex: number = 0;
   private tabsController: TabsController = new TabsController();
 
