@@ -1,5 +1,6 @@
 // 主页界面
 import ItemData from '../model/ItemData_homepage'
+import router from '@ohos.router'
 
 @Entry
 @Component
@@ -93,6 +94,9 @@ export struct HomePage {
               .borderRadius(10)
               .backgroundColor('#F5F5F5')
               .stateEffect(false)
+              .onClick(() => {
+                router.pushUrl({ url: 'pages/Food_Page' })
+              })
             }
             .backgroundColor('#F5F5F5')
             .borderRadius(10)
