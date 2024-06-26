@@ -24,9 +24,9 @@ export struct HomePage {
   // 游玩咨询数据
   getInfoItems(): Array<ItemData>{
     let infoItems: ItemData[] = [
-      new ItemData('端午去哪儿玩？免费！遂宁川剧团惠民演出精彩剧', $rawfile('media/homepage/info1.png')),
-      new ItemData('培江诗画长廊 | 这些小众人文景点，端午正好游！', $rawfile('media/homepage/info2.png')),
-      new ItemData('端午去哪儿玩？明天报名！遂宁市非遗宣传展示节', $rawfile('media/homepage/info3.png'))
+      new ItemData('端午去哪儿玩？免费！遂宁川剧团惠民演出精彩剧', $rawfile('media/homepage/info1.png'),''),
+      new ItemData('培江诗画长廊 | 这些小众人文景点，端午正好游！', $rawfile('media/homepage/info2.png'),''),
+      new ItemData('端午去哪儿玩？明天报名！遂宁市非遗宣传展示节', $rawfile('media/homepage/info3.png'),'')
     ];
     return infoItems;
   }
@@ -34,18 +34,18 @@ export struct HomePage {
   // 板块数据
   getGridItems(): Array<ItemData>{
     let gridItems: ItemData[] = [
-      new ItemData('酒店名宿', $rawfile('media/homepage/hotel.png')),
-      new ItemData('地道美食', $rawfile('media/homepage/restaurant.png')),
-      new ItemData('热门景区', $rawfile('media/homepage/site.png')),
-      new ItemData('文化艺术', $rawfile('media/homepage/culture.png')),
-      new ItemData('文化场馆', $rawfile('media/homepage/museum.png')),
-      new ItemData('停车场', $rawfile('media/homepage/parking.png')),
-      new ItemData('精品路线', $rawfile('media/homepage/route.png')),
-      new ItemData('遂宁特产', $rawfile('media/homepage/shop.png')),
-      new ItemData('旅游咨询', $rawfile('media/homepage/travelquery.png')),
-      new ItemData('文化遗产', $rawfile('media/homepage/heritage.png')),
-      new ItemData('公交信息', $rawfile('media/homepage/trans.png')),
-      new ItemData('找厕所', $rawfile('media/homepage/toilet.png'))
+      new ItemData('酒店名宿', $rawfile('media/homepage/hotel.png'),''),
+      new ItemData('地道美食', $rawfile('media/homepage/restaurant.png'),'pages/Food_Page'),
+      new ItemData('热门景区', $rawfile('media/homepage/site.png'),''),
+      new ItemData('文化艺术', $rawfile('media/homepage/culture.png'),''),
+      new ItemData('文化场馆', $rawfile('media/homepage/museum.png'),''),
+      new ItemData('停车场', $rawfile('media/homepage/parking.png'),''),
+      new ItemData('精品路线', $rawfile('media/homepage/route.png'),''),
+      new ItemData('遂宁特产', $rawfile('media/homepage/shop.png'),''),
+      new ItemData('旅游咨询', $rawfile('media/homepage/travelquery.png'),''),
+      new ItemData('文化遗产', $rawfile('media/homepage/heritage.png'),''),
+      new ItemData('公交信息', $rawfile('media/homepage/trans.png'),''),
+      new ItemData('找厕所', $rawfile('media/homepage/toilet.png'),'')
     ];
     return gridItems;
   }
@@ -95,7 +95,7 @@ export struct HomePage {
               .backgroundColor('#F5F5F5')
               .stateEffect(false)
               .onClick(() => {
-                router.pushUrl({ url: 'pages/Food_Page' })
+                router.pushUrl({ url: item.url })
               })
             }
             .backgroundColor('#F5F5F5')

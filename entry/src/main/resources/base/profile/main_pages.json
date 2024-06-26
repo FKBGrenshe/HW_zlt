@@ -3,7 +3,7 @@
     "pages/Index",
     "pages/Search_resort_Page",
     "pages/Food_Page",
-     "view/MallHome",
+    "view/MallHome",
     "pages/MallPage",
     "view/Shopping",
     "pages/MyPage"

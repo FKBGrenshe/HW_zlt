@@ -3,9 +3,11 @@
 export default class ItemData{
   title: string;
   image: Resource;
+  url: string;
 
-  constructor(title: string, image: Resource) {
+  constructor(title: string, image: Resource, url:string) {
     this.title = title;
     this.image = image;
+    this.url = url;
   }
 }
