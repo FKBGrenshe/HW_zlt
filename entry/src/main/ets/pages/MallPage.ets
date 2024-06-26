@@ -4,7 +4,7 @@ import Shopping from "../view/Shopping"
 
 @Entry
 @Component
-export struct MainPage {
+export struct MallPage {
   @State currentIndex: number = 0;
   private tabsController: TabsController = new TabsController();
 

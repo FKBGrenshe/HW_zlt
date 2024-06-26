@@ -1,7 +1,8 @@
 //index 程序的主入口
 
 import { HomePage } from '../pages/home'
-import { ResortPage } from '../pages/Resort_Page'
+import { MallPage } from '../pages/MallPage'
+import { MyPage } from './MyPage'
 
 @Entry
 @Component
@@ -26,20 +27,20 @@ struct Index {
         HomePage()
       }
       // .tabBar('打卡')
-      .tabBar(this.barBuilder(0,'HomePage'))
+      .tabBar(this.barBuilder(0,'主页'))
 
       TabContent() {
         // Text('朋友圈')
         // CirclePage()
-        ResortPage({currentTabIndex:this.currentTabIndex})
+        MallPage()
       }
       // .tabBar('朋友圈')
-      .tabBar(this.barBuilder(1,'ResortPage'))
+      .tabBar(this.barBuilder(1,'商城'))
 
-      // TabContent() {
-      //   MinePage({currentTabIndex:this.currentTabIndex})
-      // }
-      // .tabBar(this.barBuilder(2,'我的'))
+      TabContent() {
+        MyPage()
+      }
+      .tabBar(this.barBuilder(2,'我的'))
 
     }
     .barPosition(BarPosition.End)
