@@ -36,7 +36,7 @@ export struct HomePage {
     let gridItems: ItemData[] = [
       new ItemData('酒店名宿', $rawfile('media/homepage/hotel.png'),''),
       new ItemData('地道美食', $rawfile('media/homepage/restaurant.png'),'pages/Food_Page'),
-      new ItemData('热门景区', $rawfile('media/homepage/site.png'),''),
+      new ItemData('热门景区', $rawfile('media/homepage/site.png'),'pages/Resort_Page'),
       new ItemData('文化艺术', $rawfile('media/homepage/culture.png'),''),
       new ItemData('文化场馆', $rawfile('media/homepage/museum.png'),''),
       new ItemData('停车场', $rawfile('media/homepage/parking.png'),''),

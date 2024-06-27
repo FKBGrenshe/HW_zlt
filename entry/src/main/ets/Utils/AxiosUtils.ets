@@ -1,7 +1,8 @@
 import axios, { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from '@ohos/axios'
 
 export const httpObj = axios.create({
-  baseURL: '192.168.0.133:8029',
+  // baseURL: '192.168.0.133:8029',
+  baseURL: '192.168.32.215:8028',
   timeout: 2000
 })
 

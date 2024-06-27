@@ -4,8 +4,8 @@ import { GetResortsInfo,GetResortInfo } from '../model/ItemData_resortspage'
 import router from '@ohos.router'
 import { get_resort,get_resorts } from '../Utils/Api'
 
-@Preview
-// @Entry
+//@Preview
+@Entry
 @Component //comp
 export struct ResortPage {
   @State searchText: string = ''
@@ -44,13 +44,13 @@ export struct ResortPage {
     ]
   @State getResortsInfoList: GetResortsInfo[] = null
   @StorageProp('token') token: string = ''
-  @Prop @Watch("onRefresh")
-  currentTabIndex: number// 获取父组件中的index
+  //@Prop @Watch("onRefresh")
+  //currentTabIndex: number// 获取父组件中的index
 
   //要给postInfoList赋值，通过请求响应
   onRefresh(){
     //tabbar切换的时候，index会变化，一变化，朋友圈页面的变量index就能接收到，接收到变化调用onRefresh方法
-    if(this.currentTabIndex===1){
+    //if(this.currentTabIndex===1){
       //景点
       get_resorts().then(res=>{
         console.log(JSON.stringify(res.data.data.records))
@@ -66,7 +66,7 @@ export struct ResortPage {
           return new GetResortInfo(item)
         })
       })
-    }
+    //}
   }
 
 
